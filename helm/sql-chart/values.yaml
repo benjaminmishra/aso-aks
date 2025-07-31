@@ -1,0 +1,9 @@
+resourceGroup: aso-aks-rg
+location: westeurope
+server:
+  name: my-sql-server
+  adminUser: sqladmin
+  adminPassword: <db-password>
+database:
+  name: sampledb
+  skuName: Basic

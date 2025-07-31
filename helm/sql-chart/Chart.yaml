@@ -1,0 +1,4 @@
+apiVersion: v2
+name: sql-aso
+version: 0.1.0
+description: Deploy an Azure SQL Server and Database using Azure Service Operator

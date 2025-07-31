@@ -1,0 +1,11 @@
+apiVersion: sql.azure.com/v1api20211101
+kind: SqlDatabase
+metadata:
+  name: {{ .Values.database.name }}
+spec:
+  owner:
+    name: {{ .Values.server.name }}
+    kind: SqlServer
+  location: {{ .Values.location }}
+  sku:
+    name: {{ .Values.database.skuName }}
