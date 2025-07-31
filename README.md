@@ -32,8 +32,8 @@ az login
 
 ## Configuration
 
-1. Update `infra/variables.tf` with your Azure subscription and tenant IDs.
-2. Update `helm/aso-values.yaml` with matching subscription and tenant IDs or other settings.
+1. Update `infra/variables.tf` with your Azure subscription and tenant IDs. The defaults are dummy GUIDs so Terraform can run offline.
+2. Update `helm/aso-values.yaml` with matching IDs or any other desired settings.
 
 ## Deployment
 
@@ -70,3 +70,16 @@ Deploy them using Helm once the cluster is ready:
 helm install redis-release ./helm/redis-chart
 helm install sql-release ./helm/sql-chart
 ```
+
+## Build and Test
+
+Local packaging and validation can be run with the helper scripts under `scripts/`.
+
+```bash
+./scripts/build.sh
+./scripts/test.sh
+```
+
+Ensure `terraform` and `helm` are installed and available in your `PATH` before running these scripts.
+
+A GitHub Actions workflow located in `.github/workflows/ci.yml` runs these scripts automatically on pushes and pull requests.

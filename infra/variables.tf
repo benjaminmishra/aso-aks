@@ -1,13 +1,13 @@
 variable "subscription_id" {
   description = "Azure subscription ID"
   type        = string
-  default     = "<your-subscription-id>"
+  default     = "00000000-0000-0000-0000-000000000000"
 }
 
 variable "tenant_id" {
   description = "Azure tenant ID"
   type        = string
-  default     = "<your-tenant-id>"
+  default     = "00000000-0000-0000-0000-000000000000"
 }
 
 variable "location" {
