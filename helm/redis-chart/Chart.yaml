@@ -1,0 +1,4 @@
+apiVersion: v2
+name: redis-aso
+version: 0.1.0
+description: Deploy an Azure Redis Cache using Azure Service Operator

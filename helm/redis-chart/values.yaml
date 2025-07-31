@@ -1,0 +1,7 @@
+resourceGroup: aso-aks-rg
+location: westeurope
+name: my-redis-cache
+sku:
+  name: Basic
+  family: C
+  capacity: 1
