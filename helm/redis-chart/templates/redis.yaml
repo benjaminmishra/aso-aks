@@ -1,0 +1,13 @@
+apiVersion: cache.azure.com/v1api20230601
+kind: Redis
+metadata:
+  name: {{ .Values.name }}
+spec:
+  owner:
+    name: {{ .Values.resourceGroup }}
+    kind: ResourceGroup
+  location: {{ .Values.location }}
+  sku:
+    name: {{ .Values.sku.name }}
+    family: {{ .Values.sku.family }}
+    capacity: {{ .Values.sku.capacity }}

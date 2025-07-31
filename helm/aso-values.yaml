@@ -1,0 +1,5 @@
+azureSubscriptionID: "<your-subscription-id>"
+azureTenantID: "<your-tenant-id>"
+# Use AKS system-assigned managed identity
+useWorkloadIdentityAuth: false
+crdPattern: "*"

@@ -1,0 +1,12 @@
+apiVersion: sql.azure.com/v1api20211101
+kind: SqlServer
+metadata:
+  name: {{ .Values.server.name }}
+spec:
+  owner:
+    name: {{ .Values.resourceGroup }}
+    kind: ResourceGroup
+  location: {{ .Values.location }}
+  administratorLogin: {{ .Values.server.adminUser }}
+  administratorLoginPassword:
+    value: {{ .Values.server.adminPassword | quote }}
