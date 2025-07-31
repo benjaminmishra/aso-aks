@@ -80,5 +80,8 @@ Local linting and validation can be run with the helper scripts under `scripts/`
 ./scripts/test.sh
 ```
 
+Ensure `terraform` and `helm` are installed and available in your `PATH` before
+running these scripts.
+
 A GitHub Actions workflow located in `.github/workflows/ci.yml` runs these
 scripts automatically on pushes and pull requests.
