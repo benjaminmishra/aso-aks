@@ -47,7 +47,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
 }
 
 provider "helm" {
-  kubernetes {
+  kubernetes = {
     host                   = azurerm_kubernetes_cluster.aks.kube_config[0].host
     client_certificate     = base64decode(azurerm_kubernetes_cluster.aks.kube_config[0].client_certificate)
     client_key             = base64decode(azurerm_kubernetes_cluster.aks.kube_config[0].client_key)
@@ -56,11 +56,11 @@ provider "helm" {
 }
 
 resource "helm_release" "aso" {
-  name       = "azure-service-operator"
-  repository = "https://azure.github.io/azure-service-operator/charts"
-  chart      = "azure-service-operator"
-  version    = ">=1.1.0"
-  namespace  = "azureserviceoperator-system"
+  name             = "azure-service-operator"
+  repository       = "https://azure.github.io/azure-service-operator/charts"
+  chart            = "azure-service-operator"
+  version          = ">=1.1.0"
+  namespace        = "azureserviceoperator-system"
   create_namespace = true
-  values     = [file("${path.module}/../helm/aso-values.yaml")]
+  values           = [file("${path.module}/../helm/aso-values.yaml")]
 }
