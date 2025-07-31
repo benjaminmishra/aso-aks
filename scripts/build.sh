@@ -15,7 +15,7 @@ mkdir -p build
 helm package helm/redis-chart -d build
 helm package helm/sql-chart -d build
 
-# Generate Terraform plan (offline)
+# Validate Terraform configuration (offline)
 terraform -chdir=infra init -backend=false
-terraform -chdir=infra plan -out=../build/plan.tfplan
+terraform -chdir=infra validate
 
